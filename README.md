@@ -10,3 +10,4 @@ but trying to type with these stilettos is even more sad
 I'm super excited for this class ><
 What does the -m after git commit mean?
 I can't believe humans have figured all this stuff out.
+I have all the steps memorized but we'll see if I remember when I come back.
