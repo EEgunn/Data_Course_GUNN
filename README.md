@@ -14,3 +14,5 @@ I have all the steps memorized but we'll see if I remember when I come back.
 Last change and then I'm going to turn in this assignment, eat, then look up what other changes I can make
 8/30/21
 Happy birthday Harper <3
+
+see you soon
