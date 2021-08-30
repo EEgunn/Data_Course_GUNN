@@ -9,3 +9,4 @@ I think I need to consider shorter nails which makes me sad and will make my fri
 but trying to type with these stilettos is even more sad
 I'm super excited for this class ><
 What does the -m after git commit mean?
+I can't believe humans have figured all this stuff out.
