@@ -1,0 +1,15 @@
+library(tidyverse)
+
+# For my final project, I will be analyzing data on salaries by region, major and type of college. 
+# There are potentially many sources I could use to gather data. One source I have already found is 
+# from kaggle.com but I can also use data.gov and many others.
+
+read.csv(file = "degrees-that-pay-back.csv")
+read.csv(file = "salaries-by-college-type.csv")
+read.csv(file = "salaries-by-region.csv")
+degree_salaries <- read.csv(file = "degrees-that-pay-back.csv")
+salaries_college <- read.csv(file = "salaries-by-college-type.csv")
+salaries_region <- read.csv(file = "salaries-by-region.csv")
+
+ggplot(degree_salaries,aes(x= Undergraduate.Major, y= Starting.Median.Salary))+
+  geom_bar(stat(degree_salaries)) 
