@@ -34,3 +34,4 @@ df %>%
         axis.text = element_text(hjust = 1), axis.text.x = element_text(hjust = 1,angle = 90),
         legend.position = 'none',
         plot.background = element_rect(fill = "papayawhip"))
+        
