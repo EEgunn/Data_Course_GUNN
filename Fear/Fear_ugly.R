@@ -22,7 +22,7 @@ Fs %>%
         axis.line = element_line(color = "cyan2"), 
         axis.ticks = element_line(colour = "yellow4"), 
        legend.position = "none",
-        axis.title.y = element_text(colour = "green1", size = 18, face = "italic"),
+        axis.title.y = element_text(colour = "green1", size = 16, hjust = 0.8, face = "italic"),
         axis.title.x = element_text(colour = "yellow", size = 26, angle = 19, hjust =.2, face = "italic"),
         axis.text.y = element_text(hjust = 1,angle = 20, face = "bold", colour = "red"), 
         plot.background = element_rect(fill = "orange1"))
