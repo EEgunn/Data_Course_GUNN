@@ -127,11 +127,19 @@ long_un %>%
   ggplot(aes(x=year, y=proportion)) +
   geom_point(alpha = 0.5, color ="blue")+
   facet_wrap(~region, scales = "free")  +
-  coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,4.0))+
+  coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,4))+
   scale_x_continuous(breaks = seq(1960, 2000, 20))+
-  labs(x="Year",y="Proportion")+
+  labs(x="Year",y="Mortality Rate")+
   theme_minimal()
 
+ggsave(
+  "fig4.jpeg",
+  plot = last_plot(),
+  device = "jpeg",
+  path = "C:/Users/erika/Data_class/Data_Course_GUNN/Exam_2",
+  width = 9,
+  height = 9,
+  dpi = 320)
 
 
 
