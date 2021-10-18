@@ -122,19 +122,17 @@ ggsave(
 #Export it to your Exam_2 folder as LASTNAME_Fig_3.jpg (note, that's a jpg, not a png)
 
 long_un %>%
-  group_by(country_name,year) %>% 
+  group_by(country_name) %>% 
   mutate(proportion = mortality_rate/sum(mortality_rate)*100) %>% 
   ggplot(aes(x=year, y=proportion)) +
-  geom_smooth(method = "lm", se= FALSE)+
-  facet_wrap(region)+
-  coord_cartesian(xlim=c(1950,2015), ylim=c(0,300))+
+  geom_point(alpha = 0.5)+
+  facet_wrap(~region, scales = "free")  +
+  coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,4.0))+
   scale_x_continuous(breaks = seq(1960, 2000, 20))+
-  scale_color_discrete("Continent")+
-  labs(x="Year",y="Mean Mortality ")+
+  labs(x="Year",y="Proportion")+
   theme_minimal()
 
 
-p4 = ggplot(midwest, aes(x=area/max(midwest$area), y=log10(poptotal))) + 
-  
+
 
 #VI.		Commit and push all your code and files to GitHub. I'll pull your repository at 9:30pm sharp and grade what I find.
