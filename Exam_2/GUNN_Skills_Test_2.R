@@ -123,11 +123,10 @@ ggsave(
 
 long_un %>%
   group_by(country_name) %>% 
-  mutate(proportion = mortality_rate/sum(mortality_rate)*100) %>% 
-  ggplot(aes(x=year, y=proportion)) +
+  ggplot(aes(x=year, y=(mortality_rate/sum(mortality_rate))*1000)) +
   geom_point(alpha = 0.5, color ="blue")+
   facet_wrap(~region, scales = "free")  +
-  coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,4))+
+  coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,0.4))+
   scale_x_continuous(breaks = seq(1960, 2000, 20))+
   labs(x="Year",y="Mortality Rate")+
   theme_minimal()
@@ -138,7 +137,7 @@ ggsave(
   device = "jpeg",
   path = "C:/Users/erika/Data_class/Data_Course_GUNN/Exam_2",
   width = 9,
-  height = 9,
+  height = 10,
   dpi = 320)
 
 
