@@ -6,11 +6,11 @@ library(ggpubr)
 library(janitor)
 library(dplyr)
 
-setwd("./Data_Course_GUNN")
+setwd("./Data_Course_GUNN/Exam_2")
 
-ld <- read.csv("./Exam_2/landdata-states.csv")
+ld <- read.csv("./landdata-states.csv")
 
-un <- read.csv("./Exam_2/unicef-u5mr.csv")
+un <- read.csv("./unicef-u5mr.csv")
 
 
 #I.  Load the landdata-states.csv file into R
