@@ -125,7 +125,7 @@ long_un %>%
   group_by(country_name) %>% 
   mutate(proportion = mortality_rate/sum(mortality_rate)*100) %>% 
   ggplot(aes(x=year, y=proportion)) +
-  geom_point(alpha = 0.5)+
+  geom_point(alpha = 0.5, color ="blue")+
   facet_wrap(~region, scales = "free")  +
   coord_cartesian(xlim=c(1950,2015), ylim=c(0.0,4.0))+
   scale_x_continuous(breaks = seq(1960, 2000, 20))+
