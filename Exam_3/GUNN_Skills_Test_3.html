@@ -308,8 +308,9 @@ long_df1 %&gt;%
 #the significant chemicals and their model output (coefficient estimates, p-values, etc)     
 
 
-mod &lt;- glm(formula = Concentration ~ YearsSinceBurn*Chemical, data = long_df1)
-summary(mod)</code></pre>
+mod1 &lt;- glm(formula = Concentration ~ YearsSinceBurn*Chemical, data = long_df1)
+
+summary(mod1)</code></pre>
 <pre><code>## 
 ## Call:
 ## glm(formula = Concentration ~ YearsSinceBurn * Chemical, data = long_df1)
@@ -423,29 +424,21 @@ summary(mod)</code></pre>
 ## AIC: 4312.3
 ## 
 ## Number of Fisher Scoring iterations: 2</code></pre>
-<pre class="r"><code>tidymod &lt;- tidy(mod)
+<pre class="r"><code>tidymod &lt;- tidy(mod1)
 
 tidymod %&gt;% 
-  filter(p.value &lt; 0.5) %&gt;% 
+  filter(p.value &lt; 0.05) %&gt;% 
   mutate(term = str_remove_all(term, &quot;Chemical&quot;))</code></pre>
-<pre><code>## # A tibble: 14 x 5
-##    term                           estimate std.error statistic  p.value
-##    &lt;chr&gt;                             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-##  1 alpha.cedrene                     7.88      1.93      4.08  4.97e- 5
-##  2 beta.cedrene                      2.12      1.93      1.10  2.73e- 1
-##  3 beta.eudesmol                     1.43      1.93      0.740 4.60e- 1
-##  4 cedr.8.en.13.ol                   7.62      1.93      3.95  8.72e- 5
-##  5 cedr.8.en.15.ol                   1.71      1.93      0.886 3.76e- 1
-##  6 cedrol                           22.5       1.93     11.7   5.12e-29
-##  7 cis.thujopsene                   17.3       1.93      8.95  2.93e-18
-##  8 compound.1                        1.73      1.93      0.894 3.72e- 1
-##  9 thujopsenal                       1.62      1.93      0.837 4.03e- 1
-## 10 widdrol                           5.82      1.93      3.01  2.69e- 3
-## 11 YearsSinceBurn:alpha.cedrene      0.226     0.141     1.60  1.09e- 1
-## 12 YearsSinceBurn:cedr.8.en.13.ol   -0.171     0.141    -1.21  2.27e- 1
-## 13 YearsSinceBurn:cedrol            -0.225     0.141    -1.59  1.11e- 1
-## 14 YearsSinceBurn:cis.thujopsene     0.332     0.141     2.35  1.90e- 2</code></pre>
-<pre class="r"><code>#not sure why my tibble shows 14 variables and not 6 and when the numbers are the same</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   term                          estimate std.error statistic  p.value
+##   &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 alpha.cedrene                    7.88      1.93       4.08 4.97e- 5
+## 2 cedr.8.en.13.ol                  7.62      1.93       3.95 8.72e- 5
+## 3 cedrol                          22.5       1.93      11.7  5.12e-29
+## 4 cis.thujopsene                  17.3       1.93       8.95 2.93e-18
+## 5 widdrol                          5.82      1.93       3.01 2.69e- 3
+## 6 YearsSinceBurn:cis.thujopsene    0.332     0.141      2.35 1.90e- 2</code></pre>
+<pre class="r"><code>#ctrl+shift+k to knit</code></pre>
 
 
 

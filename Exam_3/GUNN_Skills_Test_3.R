@@ -114,17 +114,17 @@ ggsave("GUNN_fig_2.jpeg",
 #the significant chemicals and their model output (coefficient estimates, p-values, etc)     
 
 
-mod <- glm(formula = Concentration ~ YearsSinceBurn*Chemical, data = long_df1)
-summary(mod)
+mod1 <- glm(formula = Concentration ~ YearsSinceBurn*Chemical, data = long_df1)
 
-tidymod <- tidy(mod)
+summary(mod1)
+
+tidymod <- tidy(mod1)
 
 tidymod %>% 
-  filter(p.value < 0.5) %>% 
+  filter(p.value < 0.05) %>% 
   mutate(term = str_remove_all(term, "Chemical"))
 
-#not sure why my tibble shows 14 variables and not 6 and when the numbers are the same
-
+#ctrl+shift+k to knit
 
 
 
