@@ -4,10 +4,6 @@ library(modelr)
 library(broom)
 library(tidyr)
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 
 # I.
 
